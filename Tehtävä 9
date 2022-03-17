@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tehtävä_9_tehtävä
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Tehtävä 9");
+            Console.WriteLine("--------------");
+            Console.WriteLine();
+            Console.WriteLine("Anna viisi lukua niin lasken niiden keskiarvon.");
+            double[] luvut = new double[5];//Luon taulukon jossa on 5riviä
+            double summa = 0;//?tarvitset summan mistä lasketaan keskiarvo
+            double keskiarvo = 0;//muuttuja keskiarvon laskemiselle
+
+            for (int i = 0; i < 5; i++)//Kysytään ja luetaan luvut
+            {
+                Console.Write("Anna {0}. luku? ", i+1 ); /*{0} sillä voi helposti tulostuksessa määrittää,
+                että minne paikoille muuttujat tulostuu nollan avulla se tulostuu oikealle paikalle siinä tekstissä*/
+                //i+1 erottelee että niitä on 5 kysymystä ja antaa kysymyksen eteen numeron 1 käytännössä saman kun {0}
+                luvut[i] = double.Parse(Console.ReadLine());/*luetaan ja lisätään käyttäjän antamaan lukuun
+                luku jotta saadaan summa ihan pihalla olen*/                                            
+            }
+            foreach (double apu in luvut)//lasketaan summa foreach apu muuttujaa käyttäen,lukuun lisätään aina uusi arvo
+                //eli anna 1.luku 5 ja anna 2.luku 5. tää laskee 5+5=10 ja anna3 luku 66 eli 10+66
+            {
+                summa = summa + apu;//käyttäjän syöttämään lukuun lisätään luku ja saadaan summa
+                                   
+            }
+            keskiarvo = summa / 5;//lasketaan keskiarvo
+            Console.WriteLine("Keskiarvo on {0:0.00}", keskiarvo);//ja tulostetaan se
+        }//en oikein käsitä tätä tehtävää kunnolla:( 
+    }
+}
