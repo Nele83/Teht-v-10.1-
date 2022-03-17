@@ -1,0 +1,119 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tehtävä_10._2_Luvun_arvaus
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {   //muuttujat
+            int i = 0;
+            int arvaus2; //jos käyttäjä vastaa Lopetuksen l:llä
+            string arvaus1 = "";//eli luvulle arvaa merkkijonolla
+            Random r = new Random();//Käyttäjälle luodaan satunnaisluku olio         
+            int arvottuluku = r.Next(1, 13);// arvotaan luku 1-12 väliltä            
+            //Console.Write(arvottuluku);Tulostetaan tehtävä.
+            Console.WriteLine("Tehtava 10 vaihe 2");           
+            Console.WriteLine("--------------------");
+            Console.WriteLine();       
+            Console.WriteLine("Arvaa arvottu luku väliltä 1-12 (lopetus L-merkillä)  ");//lopettaa jos käyttäjä valitsee L:n
+            Console.WriteLine();//Välirivi
+            /*l = l.ToUpper();*/// ToUpper jättää kirjaimen aina isoksi, miksi tää ei kelvannu??
+            while (arvaus1 != "L" && arvaus1 != "l")//!= Vertailuoperaattoreita käytetään kahden arvon vertaamiseen && on niinkuin tai
+            {
+                i = i + 1;//vois enskerralla käyttää i++:a tarkoittaa samaa
+                Console.Write(i + ".Yritys: Arvaa luku? ");// seuraavalla rivillä on 2. Yritys: Arvaa luku?
+                arvaus1 = Console.ReadLine();//Käyttäjän arvaus
+                if (Int32.TryParse(arvaus1, out arvaus2))//Muutetaan arvaus 1(on lopetus L) ja kaksi on numero tätä en käsitä!!!
+                {
+                    if (arvaus2 > 12)//jos arvaus on suurempi kuin 13:a
+                    {
+                        Console.WriteLine("Antamasi luku ei ole 1-12 väliltä!");//Käyttäjälle ilmoitetaan
+                    }
+                    else if (arvaus2 < 1)//Jos arvaus on pienempi kuin yksi
+                    {
+                        Console.WriteLine("Antamasi luku ei ole 1 - 12 väliltä!!!");//Käyttäjälle ilmoitetaan
+                    }
+                    else if (arvaus2 == arvottuluku) //tai jos arvaus on oike 
+                    {
+                        Console.WriteLine();//Käyttäjää onnitellaan
+                        Console.WriteLine("Onneksi olkoon, arvasit oikein!!!");
+                        Console.WriteLine("Oikea vastaus on " + arvottuluku);
+                        Console.WriteLine();
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine();//1. Yritys: Arvaa luku? Rivien väsissä on tyhjät rivit
+                    }
+                }
+                else
+                {   //Jos käyttäjä lopettaakin L:llä niin näkyviin tulee
+                    Console.WriteLine("Lopetetaan .....");
+                    Console.WriteLine();
+                    Console.WriteLine("Halusit lopettaa LUUSERI !!");
+                    Console.WriteLine();
+                    Console.WriteLine("Oikea vastaus on " + arvottuluku);
+                    Console.WriteLine();
+                }
+            }
+        }
+            
+               
+    }
+}
+//string l = vastaus1;//muuttuja lopetukselle
+//vastaus1 = l
+//i = i + 1;
+//Console.Write(i + ". yritys: Arvaa luku? ");
+//l = Console.ReadLine();
+//l = l.ToUpper();// ToUpper jättää kirjaimen aina isoksi
+                //arvottu = int.Parse(Console.ReadLine());
+                ////Console.ReadLine();
+                //while (vastaus1 = l)
+                //{
+                //    i = i + 1;
+                //    Console.Write(i + ". yritys: Arvaa luku? ");
+                //    l = Console.ReadLine();
+                //    l = l.ToUpper();// ToUpper jättää kirjaimen aina isoksi
+                //                    //arvottu = int.Parse(Console.ReadLine());
+                //                    //Console.ReadLine();
+                //    if (vastaus = l)
+                //    {
+                //        Console.Write();
+                //    }
+                //}
+                //while (vastaus < 13)//Satunainen luku pyörii alle 13:a
+                //{
+                //    i = i + 1;
+                //    Console.Write(i +". yritys: Arvaa luku? ");//i+ Jotta 1. yritys tuulisi
+                //                                            //seusrraavalle riville 2. yritys.
+                //    vastaus = Convert.ToInt32(Console.ReadLine());//Käyttäjän syöttämä luvun tarkkailu
+                //    Console.WriteLine();
+                //    if ( vastaus == arvottuluku)//Jos on sama kuin satunnainen luku
+                //    {//Käyttäjälle ilmestyy Onneksi olkoon....
+                //        Console.WriteLine("Onneksi olkoon, arvasit oikein!!!");
+                //        Console.WriteLine("Oikea vastaus on " + arvottuluku);
+                //        break;
+                //    }
+                //    else if (vastaus ="L")
+                //    //{
+                //        Console.WriteLine("Halusit lopettaa LUUSERI!!");
+                //    }
+                //    {
+
+//        Console.WriteLine("Oikea vastaus on" + arvottuluku);
+//    }               
+//}
+////Console.WriteLine("Onneksi olkoon, arvasit oikein!!!");
+//Console.Write("Oikea vastaus on" + arvottuluku);
+//Console.WriteLine("Onneksi olkoon, arvasit oikein!!!");                               
+//Console.WriteLine("Oikea vastaus on " + luku);
+//arvottu = arvottu;
+//do
+//{
+//    Console.WriteLine(arvottu);
+//} while (arvottu <= 13);
