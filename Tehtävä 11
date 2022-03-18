@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Tehtävä
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 0;
+            int[] luku = new int[5];
+            Console.WriteLine("Tehtävä 11");
+            Console.WriteLine();
+            Console.WriteLine("---------------");
+            //Console.Write(". Listan luku? ");
+            Console.WriteLine();
+
+            List<int> luvut = new List<int>();
+            for (i = 0; i < 5; i++)
+            {
+                Console.Write(1+i + ". Listan luku? ");
+                luku[i] = int.Parse(Console.ReadLine()); 
+                luvut.Add(luku[i]);
+            }
+
+            foreach (int item in luvut)
+            {
+                Console.WriteLine(item);
+                //Console.WriteLine(luvut[0]);
+            }
+
+
+
+        }
+    }
+    
+}
