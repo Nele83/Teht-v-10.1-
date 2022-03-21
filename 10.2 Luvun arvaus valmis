@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tehtävä_10._2_Luvun_arvaus_valmis
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 0;// aina lisää 1 
+            Random r = new Random();//Käyttäjälle satunnaisluku
+            int arvottuluku = r.Next(1, 13);//saa arvon1-12
+            int arvaus = 0;//Lisätään muuttujat
+            string lopetus = " ";//tilalle tulee jotain...
+
+
+            //Console.Write(arvottuluku);//Näyttä luvun
+            Console.WriteLine("Tehtava 10 vaihe 2");
+            Console.WriteLine("----------------------");
+            Console.WriteLine();
+            Console.WriteLine("Arvaa arvottu luku väliltä 1-12 (Lopetus L-merkillä) ");
+            Console.WriteLine();
+
+            while (!(arvottuluku == arvaus) && !(lopetus == "L"))//elikkäs kaksi vaihtoehtoa (vertailuoperaattorit
+                //tosi tai epätosi.
+            {
+                i = i + 1;
+                Console.Write(i + ". yritys: Arvaa luku? ");
+                lopetus = Console.ReadLine();//jos tulee kirjain merkki silloin on: Console.ReadLine
+                //Console.WriteLine();
+                if (lopetus == "L")//Käyttäjä jos lopettaa kirjaimella
+                {    //Näkyviin hälle tulee
+                    Console.WriteLine("lopetetaan....");
+                    Console.WriteLine();
+                    Console.WriteLine("Halusit lopettaa LUUSERI!! ");
+                    Console.WriteLine();
+                    Console.WriteLine("Oikea vastaus on " + arvottuluku);
+                }
+                else
+                {   //Jos käyttäjä arvaileekin numeroilla
+                    arvaus = int.Parse(lopetus);// jos on numero tulee int.Parse arvaus pysyy inttinä
+                }
+                Console.WriteLine("");// tällä tulee tyhjät rivit kysymysten väliin
+
+                if (arvaus == arvottuluku)//Kun käyttäjä arvaa arvotun luvun
+                {               //näkyviin hälle tulee
+                    Console.WriteLine("Onneksi olkoon, arvasit oikein!!!");
+                    Console.WriteLine("Oikea vastaus on " + arvottuluku);
+                    //tauko;
+                    i = 100; //on sama kuin break
+                    //tauko;
+                }
+                else
+                {
+                    arvaus = int.Parse(lopetus);//Atvaus kun on oikea niin lopettaa pyörityksen
+                    //Console.Write("Oikea vastaus on " + arvottuluku);
+                }
+            } 
+        }  
+    }
+}
