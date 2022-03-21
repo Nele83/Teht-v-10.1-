@@ -1,0 +1,30 @@
+using System;
+
+namespace Tehtävä_12
+{
+    public class Kolmioita
+    {
+        public static int luvunnelio (int luku)//Luodaan aliohjelma luvunnelio
+            //ja se saa parametrina arvon luku
+        {
+           //Tässä aliohjelma laskee neliön
+            int tulos = luku * luku;
+            return tulos;//Palauttaa aliohjelman, eli funktio
+        }
+        public static void Main()
+        {
+            Console.WriteLine("Tehtävä 12 (Nele.N)");
+            Console.WriteLine("-----------------------");
+            Console.WriteLine("");
+
+
+            Console.Write("Anna luku, jonka neliön haluat tietää? ");
+            int luku = int.Parse(Console.ReadLine());
+
+            //int nelio = luvunnelio(luku); //Aliohjelman nimi on luvunnelio
+            
+            Console.WriteLine("Luvun " + luku + " neliö on " + nelio);
+        }
+    }
+}
+
