@@ -1,0 +1,48 @@
+ int i = 0;// aina lisää 1 jotta
+            Random r = new Random();//Käyttäjälle satunnaisluku
+            int arvottuluku = r.Next(1, 13);//saa arvon1-12
+            int arvaus = 0;//Lisätään muuttujat
+            string lopetus = " ";//tilalle tulee jotain
+
+
+            Console.Write(arvottuluku);//
+            Console.WriteLine("Tehtava 10 vaihe 2");
+            Console.WriteLine("----------------------");
+            Console.WriteLine();
+            Console.WriteLine("Arvaa arvottu luku väliltä 1-12 (Lopetus L-merkillä) ");
+            Console.WriteLine();
+
+
+            while (!(arvottuluku == arvaus) && !(lopetus == "L"))//ei
+            {
+                i = i + 1;
+                Console.Write(i + ". yritys: Arvaa luku? ");
+                lopetus = Console.ReadLine();//jos tulee L jos merkki on Console.ReadLine
+                //Console.WriteLine();
+                if (lopetus == "L")
+                {
+                    Console.WriteLine("lopetetaan....");
+                    Console.WriteLine();
+                    Console.WriteLine("Halusit lopettaa LUUSERI!! ");
+                    Console.WriteLine();
+                    Console.WriteLine("Oikea vastaus on " + arvottuluku);
+                }
+                else
+                {
+                    arvaus = int.Parse(lopetus);// jos on numero tulee int.Parse arvaus pysyy inttinä
+                }
+                Console.WriteLine("");
+
+                if (arvaus == arvottuluku)
+                    {
+                    Console.WriteLine("Onneksi olkoon, arvasit oikein!!!");
+                    Console.WriteLine("Oikea vastaus on " + arvottuluku);
+                    //break;
+                    i = 100; //on sama kuin break
+                    //tauko;
+                }
+                else
+                    {                 
+                        arvaus = int.Parse(lopetus);
+                        //Console.Write("Oikea vastaus on " + arvottuluku);
+                    }
